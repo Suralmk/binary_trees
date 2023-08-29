@@ -5,13 +5,11 @@
  *                     in a binary tree.
  * @node: A pointer to the node to find the uncle of.
  *
- * Return: If node is NULL or has no uncle, NULL.
- *         Otherwise, a pointer to the uncle node.
+ * Return: If node is NULL or has no uncle, NULL, else return pointer to unclde node
  */
 binary_tree_t *binary_tree_uncle(binary_tree_t *node)
 {
-	if (node == NULL ||
-	    node->parent == NULL ||
+	if (!node || node->parent == NULL ||
 	    node->parent->parent == NULL)
 		return (NULL);
 	if (node->parent->parent->left == node->parent)
